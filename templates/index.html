@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text/PDF to Video</title>
+</head>
+<body style="text-align: center; font-family: Arial, sans-serif; margin-top: 50px;">
+    <h1>Upload Text or PDF File</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required><br><br>
+        <input type="submit" value="Generate Video">
+    </form>
+    {% if video_url %}
+        <h2>Your Video:</h2>
+        <video width="640" controls>
+            <source src="{{ video_url }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <br>
+        <a href="{{ video_url }}" download>Download Video</a>
+    {% endif %}
+</body>
+</html>
